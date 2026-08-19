@@ -1,0 +1,17 @@
+node_modules/
+dist/
+deploy/
+.env
+database/*.db
+database/*.db-shm
+database/*.db-wal
+storage/products/*
+storage/uploads/*
+storage/banners/*
+storage/logos/*
+storage/pages/*
+storage/temp/*
+storage/backups/*
+!storage/**/.gitkeep
+package-lock.json
+*.log
