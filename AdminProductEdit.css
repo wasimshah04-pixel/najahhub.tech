@@ -1,0 +1,309 @@
+.admin-product-edit {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.admin-edit-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 400px;
+}
+
+.admin-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--color-border);
+  border-top-color: var(--color-text);
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ─── Top Bar ──────────────────────────────────────── */
+.edit-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: var(--space-xl);
+}
+
+.edit-topbar__actions {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+/* ─── Layout ───────────────────────────────────────── */
+.edit-layout {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: var(--space-2xl);
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .edit-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─── Cards ────────────────────────────────────────── */
+.edit-card {
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  margin-bottom: var(--space-lg);
+}
+
+.edit-card__label {
+  display: block;
+  font-size: var(--text-small);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-secondary);
+  margin-bottom: var(--space-lg);
+}
+
+/* ─── Inputs ───────────────────────────────────────── */
+.edit-input {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  font-size: var(--text-body);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-background);
+  color: var(--color-text);
+  transition: border-color var(--motion-fast) var(--ease-out);
+  outline: none;
+}
+
+.edit-input:focus {
+  border-color: var(--color-text);
+}
+
+.edit-input--lg {
+  font-size: var(--text-h3);
+  font-weight: 600;
+  padding: 0.85rem 1rem;
+}
+
+.edit-textarea {
+  resize: vertical;
+  min-height: 100px;
+  line-height: 1.6;
+}
+
+/* ─── Fields ───────────────────────────────────────── */
+.edit-field {
+  margin-bottom: var(--space-md);
+}
+
+.edit-field:last-child {
+  margin-bottom: 0;
+}
+
+.edit-field__label {
+  display: block;
+  font-size: var(--text-small);
+  font-weight: 500;
+  margin-bottom: var(--space-xs);
+}
+
+.edit-field__hint {
+  display: block;
+  font-size: var(--text-xs);
+  color: var(--color-secondary);
+  margin-top: var(--space-xs);
+}
+
+/* ─── Image URL Row ────────────────────────────────── */
+.edit-image-url-row {
+  display: flex;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.edit-image-url-row .edit-input {
+  flex: 1;
+}
+
+/* ─── File Upload ──────────────────────────────────── */
+.edit-file-upload {
+  margin-bottom: var(--space-lg);
+}
+
+.edit-file-label {
+  cursor: pointer;
+}
+
+.edit-file-input {
+  display: none;
+}
+
+.edit-file-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 0.55rem 1rem;
+  font-size: var(--text-small);
+  font-weight: 500;
+  border: 1.5px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-secondary);
+  transition: all var(--motion-fast) var(--ease-out);
+}
+
+.edit-file-label:hover .edit-file-btn {
+  border-color: var(--color-text);
+  color: var(--color-text);
+}
+
+/* ─── Image Grid ───────────────────────────────────── */
+.edit-image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: var(--space-md);
+}
+
+.edit-image-thumb {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1.5px solid var(--color-border);
+}
+
+.edit-image-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.edit-image-actions {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+  padding: 4px;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: opacity var(--motion-fast) var(--ease-out);
+}
+
+.edit-image-thumb:hover .edit-image-actions {
+  opacity: 1;
+}
+
+.edit-img-btn {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  color: #fff;
+  font-size: 12px;
+  transition: background var(--motion-fast) var(--ease-out);
+}
+
+.edit-img-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.edit-img-btn--danger:hover {
+  background: rgba(220, 38, 38, 0.8);
+}
+
+.edit-image-badge {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: var(--color-text);
+  color: var(--color-button-text);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+}
+
+.edit-image-empty {
+  text-align: center;
+  padding: var(--space-2xl);
+  border: 1.5px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-secondary);
+  font-size: var(--text-small);
+}
+
+/* ─── Toggle ───────────────────────────────────────── */
+.edit-toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  cursor: pointer;
+}
+
+.edit-toggle input {
+  display: none;
+}
+
+.edit-toggle__slider {
+  width: 40px;
+  height: 22px;
+  background: var(--color-border);
+  border-radius: 11px;
+  position: relative;
+  transition: background var(--motion-fast) var(--ease-out);
+  flex-shrink: 0;
+}
+
+.edit-toggle__slider::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform var(--motion-fast) var(--ease-out);
+}
+
+.edit-toggle input:checked + .edit-toggle__slider {
+  background: var(--color-text);
+}
+
+.edit-toggle input:checked + .edit-toggle__slider::after {
+  transform: translateX(18px);
+}
+
+.edit-toggle__label {
+  font-size: var(--text-small);
+  font-weight: 500;
+}
+
+/* ─── Responsive ───────────────────────────────────── */
+@media (max-width: 640px) {
+  .edit-topbar {
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+
+  .edit-image-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

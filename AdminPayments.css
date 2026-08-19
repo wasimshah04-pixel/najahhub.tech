@@ -1,0 +1,67 @@
+.gateway-config-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.gateway-card {
+  background: var(--color-background);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--motion-fast) var(--ease-out);
+}
+
+.gateway-card--enabled {
+  border-color: var(--color-primary);
+}
+
+.gateway-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.gateway-card__title-wrap {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.gateway-icon {
+  font-size: 1.75rem;
+}
+
+.gateway-toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  cursor: pointer;
+}
+
+.gateway-toggle input[type="checkbox"] {
+  accent-color: var(--color-primary);
+  width: 18px;
+  height: 18px;
+}
+
+.toggle-label {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+}
+
+.gateway-card--enabled .toggle-label {
+  background: var(--color-primary);
+  color: var(--color-button-text);
+}
+
+.gateway-card__body {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--color-border);
+}

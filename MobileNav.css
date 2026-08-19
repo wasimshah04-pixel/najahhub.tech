@@ -1,0 +1,98 @@
+.mobile-nav-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: var(--color-backdrop);
+  animation: backdropIn var(--motion-base) var(--ease-smooth);
+}
+
+.mobile-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: min(320px, 85vw);
+  background: var(--color-background);
+  display: flex;
+  flex-direction: column;
+  animation: slideInLeft var(--motion-base) var(--ease-smooth);
+  box-shadow: var(--shadow-xl);
+}
+
+.mobile-nav__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-lg) var(--space-xl);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.mobile-nav__title {
+  font-size: var(--text-small);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+}
+
+.mobile-nav__close {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  color: var(--color-text);
+  transition: background var(--motion-fast) var(--ease-out);
+}
+
+.mobile-nav__close:hover {
+  background: var(--color-surface);
+}
+
+.mobile-nav__links {
+  flex: 1;
+  padding: var(--space-lg) 0;
+  overflow-y: auto;
+}
+
+.mobile-nav__link {
+  display: block;
+  padding: 0.875rem var(--space-xl);
+  font-size: var(--text-h3);
+  font-weight: 500;
+  color: var(--color-text);
+  transition: background var(--motion-fast) var(--ease-out),
+              color var(--motion-fast) var(--ease-out);
+  opacity: 0;
+  animation: fadeRight var(--motion-base) var(--ease-smooth) forwards;
+}
+
+.mobile-nav__link:hover {
+  background: var(--color-surface);
+}
+
+.mobile-nav__link--active {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.mobile-nav__footer {
+  padding: var(--space-lg) var(--space-xl);
+  border-top: 1px solid var(--color-border);
+}
+
+.mobile-nav__footer-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) 0;
+  font-size: var(--text-body);
+  font-weight: 500;
+  color: var(--color-secondary);
+  transition: color var(--motion-fast) var(--ease-out);
+}
+
+.mobile-nav__footer-link:hover {
+  color: var(--color-text);
+}

@@ -1,0 +1,542 @@
+.home-page {
+  overflow-x: hidden;
+}
+
+/* ─── Full Screen Video Hero Banner (Bottom Aligned & Minimalist) ─── */
+.hero-banner--fullscreen {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - var(--header-height));
+  height: calc(100dvh - var(--header-height));
+  min-height: 550px;
+  max-height: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: #FFFFFF;
+  padding-bottom: clamp(2rem, 5vw, 4rem);
+  overflow: hidden;
+}
+
+.hero-banner__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.hero-banner__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.hero-banner__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0.05) 100%);
+}
+
+/* Bottom Wrapper for Minimalist Text + Buttons */
+.hero-banner__bottom-wrap {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-xl);
+  flex-wrap: wrap;
+}
+
+.hero-banner__meta {
+  max-width: 600px;
+}
+
+.hero-banner__tagline {
+  display: block;
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: var(--space-xs);
+}
+
+.hero-banner__title {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  color: #FFFFFF;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin: 0;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+/* ─── Small Minimalistic Hero Buttons ──────────────────── */
+.hero-banner__cta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.btn--hero-sm {
+  padding: 0.55rem 1.25rem;
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  border-radius: var(--radius-full);
+  transition: all var(--motion-fast) var(--ease-out);
+  white-space: nowrap;
+}
+
+.btn--hero-primary {
+  background: #FFFFFF;
+  color: #000000;
+  border: 1px solid #FFFFFF;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn--hero-primary:hover {
+  background: var(--color-surface);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.25);
+}
+
+.btn--hero-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn--hero-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* ─── Pentagraph Categories Frame Section ───────────────── */
+.pentagraph-section {
+  background: var(--color-background);
+  padding: var(--space-4xl) 0;
+}
+
+.section__tagline {
+  display: block;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  margin-bottom: var(--space-xs);
+}
+
+.pentagraph-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-md);
+  align-items: center;
+  margin-top: var(--space-2xl);
+}
+
+.penta-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  text-decoration: none;
+  color: var(--color-text);
+  transition: transform var(--motion-base) var(--ease-smooth);
+}
+
+.penta-card:hover {
+  transform: translateY(-6px);
+}
+
+.penta-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  clip-path: polygon(50% 0%, 100% 15%, 100% 85%, 50% 100%, 0% 85%, 0% 15%);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+  transition: clip-path var(--motion-slow) var(--ease-smooth),
+              box-shadow var(--motion-base) var(--ease-out);
+}
+
+.penta-card:hover .penta-frame {
+  clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%, 0% 100%, 0% 0%);
+  box-shadow: var(--shadow-lg);
+}
+
+.penta-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--motion-slow) var(--ease-smooth);
+}
+
+.penta-card:hover .penta-img {
+  transform: scale(1.08);
+}
+
+.penta-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.5) 100%);
+}
+
+.penta-num {
+  position: absolute;
+  top: var(--space-md);
+  left: var(--space-md);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #FFFFFF;
+  z-index: 2;
+  opacity: 0.85;
+}
+
+.penta-badge {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 0.2rem 0.5rem;
+  background: #FFFFFF;
+  color: #000000;
+  border-radius: var(--radius-sm);
+  z-index: 2;
+}
+
+.penta-info {
+  text-align: center;
+}
+
+.penta-info h3 {
+  font-size: var(--text-body);
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.penta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--color-secondary);
+  transition: color var(--motion-fast) var(--ease-out);
+}
+
+.penta-card:hover .penta-link {
+  color: var(--color-primary);
+}
+
+/* ─── Section Alt Background ──────────── */
+.section--alt {
+  background: var(--color-surface);
+}
+
+.home-section__footer {
+  text-align: center;
+  margin-top: var(--space-2xl);
+}
+
+/* ─── Promo Banner ────────────────────── */
+.promo-banner {
+  background: var(--color-primary);
+  color: var(--color-button-text);
+  padding: var(--space-4xl) 0;
+  text-align: center;
+}
+
+.promo-banner__content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.promo-banner__tag {
+  font-size: var(--text-small);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.8;
+  display: block;
+  margin-bottom: var(--space-sm);
+}
+
+.promo-banner__title {
+  font-size: var(--text-h1);
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+  color: inherit;
+}
+
+.promo-banner__desc {
+  font-size: var(--text-body);
+  opacity: 0.85;
+  margin-bottom: var(--space-2xl);
+}
+
+/* ─── Trust Badges / Value Propositions ─────────────────── */
+.trust-section {
+  background: var(--color-background);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-3xl) 0;
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-xl);
+}
+
+.trust-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.trust-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text);
+  margin-bottom: var(--space-md);
+}
+
+.trust-card h3 {
+  font-size: var(--text-body);
+  font-weight: 600;
+  margin-bottom: var(--space-xs);
+}
+
+.trust-card p {
+  font-size: var(--text-xs);
+  color: var(--color-secondary);
+  line-height: 1.5;
+}
+
+/* ─── Ultra Minimalist FAQ Accordion ─────────────────────── */
+.faq-section {
+  padding: var(--space-4xl) 0;
+}
+
+.container--narrow {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.section__header--minimal {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.faq-list--minimal {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--color-border);
+}
+
+.faq-list--minimal .faq-item {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-border);
+  border-radius: 0;
+  padding: var(--space-lg) 0;
+  cursor: pointer;
+  transition: all var(--motion-fast) var(--ease-out);
+}
+
+.faq-list--minimal .faq-item:hover {
+  background: transparent;
+}
+
+.faq-list--minimal .faq-item--active {
+  background: transparent;
+}
+
+.faq-list--minimal .faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+.faq-list--minimal .faq-question h3 {
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  font-weight: 500;
+  color: var(--color-text);
+  margin: 0;
+  transition: color var(--motion-fast) var(--ease-out);
+}
+
+.faq-list--minimal .faq-item:hover .faq-question h3,
+.faq-list--minimal .faq-item--active .faq-question h3 {
+  color: var(--color-primary);
+}
+
+.faq-list--minimal .faq-toggle-icon {
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: var(--color-secondary);
+  line-height: 1;
+  transition: transform var(--motion-fast) var(--ease-out);
+}
+
+.faq-list--minimal .faq-item--active .faq-toggle-icon {
+  color: var(--color-primary);
+}
+
+.faq-list--minimal .faq-answer {
+  margin-top: var(--space-sm);
+  padding-top: 0;
+  border-top: none;
+}
+
+.faq-list--minimal .faq-answer p {
+  font-size: var(--text-small);
+  color: var(--color-secondary);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ─── Responsive Adjustments ──────────── */
+@media (max-width: 1024px) {
+  .pentagraph-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .penta-card--center {
+    grid-column: 2 / 3;
+  }
+
+  .trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-banner--fullscreen {
+    min-height: 420px;
+    max-height: 700px;
+    padding-bottom: clamp(1.5rem, 4vw, 3rem);
+  }
+
+  .hero-banner__video {
+    object-position: center 40%;
+  }
+
+  .hero-banner__bottom-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+
+  .hero-banner__title {
+    font-size: clamp(1.75rem, 6vw, 2.5rem);
+  }
+
+  .pentagraph-section {
+    padding: var(--space-2xl) 0;
+  }
+
+  .pentagraph-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-sm);
+    align-items: start;
+  }
+
+  .penta-card--center {
+    grid-column: 1 / -1;
+    order: -1;
+    max-width: 55%;
+    margin: 0 auto var(--space-sm);
+  }
+
+  .penta-frame {
+    aspect-ratio: 3 / 4;
+    border-radius: var(--radius-lg);
+  }
+
+  .penta-num {
+    top: var(--space-xs);
+    left: var(--space-xs);
+    font-size: 9px;
+  }
+
+  .penta-badge {
+    top: var(--space-xs);
+    right: var(--space-xs);
+    font-size: 8px;
+    padding: 0.1rem 0.35rem;
+  }
+
+  .penta-info {
+    text-align: center;
+    padding: var(--space-xs) 0 0;
+  }
+
+  .penta-info h3 {
+    font-size: var(--text-xs);
+    margin-bottom: 0;
+  }
+
+  .penta-link {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pentagraph-section {
+    padding: var(--space-xl) 0;
+  }
+
+  .pentagraph-grid {
+    gap: var(--space-xs);
+  }
+
+  .penta-card--center {
+    max-width: 65%;
+  }
+
+  .penta-card {
+    width: 100%;
+  }
+
+  .penta-frame {
+    aspect-ratio: 1 / 1;
+    border-radius: var(--radius-md);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  }
+
+  .penta-card:hover .penta-frame {
+    clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%, 0% 100%, 0% 0%);
+  }
+
+  .penta-info h3 {
+    font-size: 10px;
+  }
+
+  .penta-link {
+    font-size: 8px;
+  }
+
+  .trust-grid {
+    grid-template-columns: 1fr;
+  }
+}

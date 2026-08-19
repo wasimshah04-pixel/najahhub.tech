@@ -1,0 +1,142 @@
+.admin-table--interactive tbody tr {
+  cursor: pointer;
+  transition: background var(--motion-fast) var(--ease-out);
+}
+
+.admin-table--interactive tbody tr:hover {
+  background: var(--color-surface);
+}
+
+/* Modal sizing */
+.modal-content--lg {
+  max-width: 820px !important;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: var(--space-lg);
+}
+
+.admin-modal-close {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: var(--color-secondary);
+  padding: 4px var(--space-xs);
+}
+
+.admin-modal-close:hover {
+  color: var(--color-text);
+}
+
+.order-edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.admin-form-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-lg);
+}
+
+.admin-form-card h3 {
+  font-size: var(--text-small);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-secondary);
+  margin-bottom: var(--space-md);
+}
+
+.admin-form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.admin-form-grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--space-md);
+}
+
+@media (max-width: 640px) {
+  .admin-form-grid-2,
+  .admin-form-grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Item row inside edit modal */
+.admin-order-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.admin-order-item-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-xs) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.admin-order-item-row:last-child {
+  border-bottom: none;
+}
+
+.admin-order-item-img {
+  width: 44px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  background: var(--color-background);
+}
+
+.admin-order-item-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-order-item-total {
+  font-weight: 600;
+  font-size: var(--text-small);
+}
+
+/* Financials Summary */
+.admin-financials-summary {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  font-size: var(--text-small);
+}
+
+.financial-row {
+  display: flex;
+  justify-content: space-between;
+  color: var(--color-secondary);
+}
+
+.financial-row.total-row {
+  font-size: var(--text-h3);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-sm);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border);
+}

@@ -1,0 +1,35 @@
+.static-page {
+  padding-top: var(--space-3xl);
+  padding-bottom: var(--space-4xl);
+}
+
+.static-page__title {
+  font-size: var(--text-h1);
+  font-weight: 700;
+  margin-bottom: var(--space-xl);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--space-md);
+}
+
+.static-page__content {
+  font-size: var(--text-body);
+  line-height: 1.8;
+  color: var(--color-text);
+}
+
+.static-page__content h2 {
+  font-size: var(--text-h2);
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-md);
+}
+
+.static-page__content p {
+  margin-bottom: var(--space-md);
+  color: var(--color-secondary);
+}
+
+.static-page__content ul {
+  list-style: disc;
+  padding-left: var(--space-xl);
+  margin-bottom: var(--space-md);
+}

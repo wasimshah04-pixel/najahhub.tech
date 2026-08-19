@@ -1,0 +1,183 @@
+/* ═══════════════════════════════════════════════
+   Header — Dawn-Inspired Sticky Header
+   ═══════════════════════════════════════════════ */
+
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--color-background);
+  transition: box-shadow var(--motion-fast) var(--ease-out),
+              background-color var(--motion-fast) var(--ease-out);
+}
+
+.header--scrolled {
+  box-shadow: 0 1px 0 var(--color-border);
+  background: var(--color-background);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+  gap: var(--space-xl);
+}
+
+/* ─── Logo ────────────────────────────────────── */
+.header__logo {
+  font-size: 1.375rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  flex-shrink: 0;
+  transition: opacity var(--motion-fast) var(--ease-out);
+}
+
+.header__logo:hover {
+  opacity: 0.7;
+}
+
+/* ─── Desktop Navigation ─────────────────────── */
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+  flex: 1;
+  justify-content: center;
+}
+
+.header__nav-item {
+  position: relative;
+}
+
+.header__nav-link {
+  font-size: var(--text-small);
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: var(--color-secondary);
+  padding: var(--space-xs) 0;
+  transition: color var(--motion-fast) var(--ease-out);
+}
+
+.header__nav-link:hover,
+.header__nav-link--active {
+  color: var(--color-text);
+}
+
+.header__nav-link--active::after {
+  width: 100%;
+}
+
+/* ─── Action Buttons ─────────────────────────── */
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  flex-shrink: 0;
+}
+
+.header__action-btn {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  color: var(--color-text);
+  transition: background var(--motion-fast) var(--ease-out),
+              color var(--motion-fast) var(--ease-out);
+  position: relative;
+}
+
+.header__action-btn:hover {
+  background: var(--color-surface);
+}
+
+/* Cart Count Badge */
+.header__cart-count {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 18px;
+  height: 18px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  color: var(--color-button-text);
+  font-size: 10px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: scaleIn var(--motion-fast) var(--ease-bounce);
+}
+
+/* ─── Hamburger (Mobile) ─────────────────────── */
+.header__hamburger {
+  display: none;
+  width: 40px;
+  height: 40px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border-radius: var(--radius-full);
+  transition: background var(--motion-fast) var(--ease-out);
+}
+
+.header__hamburger:hover {
+  background: var(--color-surface);
+}
+
+.hamburger-line {
+  display: block;
+  width: 18px;
+  height: 1.5px;
+  background: var(--color-text);
+  border-radius: 2px;
+  transition: transform var(--motion-base) var(--ease-smooth),
+              opacity var(--motion-base) var(--ease-smooth);
+}
+
+/* ─── Responsive ─────────────────────────────── */
+@media (max-width: 768px) {
+  .header__hamburger {
+    display: flex;
+  }
+
+  .header__nav {
+    display: none;
+  }
+
+  .header__inner {
+    gap: var(--space-sm);
+  }
+
+  .header__logo {
+    font-size: 1.125rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 640px) {
+  .header__actions {
+    gap: 0;
+  }
+
+  .header__action-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .header__action-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+}
